@@ -1,0 +1,11 @@
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\bin\Debug\netcoreapp3.1\dark-place-game.exe
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\bin\Debug\netcoreapp3.1\dark-place-game.deps.json
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\bin\Debug\netcoreapp3.1\dark-place-game.runtimeconfig.json
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\bin\Debug\netcoreapp3.1\dark-place-game.runtimeconfig.dev.json
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\bin\Debug\netcoreapp3.1\dark-place-game.dll
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\bin\Debug\netcoreapp3.1\dark-place-game.pdb
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\obj\Debug\netcoreapp3.1\dark-place-game.csprojAssemblyReference.cache
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\obj\Debug\netcoreapp3.1\dark-place-game.AssemblyInfoInputs.cache
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\obj\Debug\netcoreapp3.1\dark-place-game.AssemblyInfo.cs
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\obj\Debug\netcoreapp3.1\dark-place-game.dll
+C:\Users\jimga\OneDrive\Bureau\test unitaire\dark-place-engine\dark-place-game\obj\Debug\netcoreapp3.1\dark-place-game.pdb
