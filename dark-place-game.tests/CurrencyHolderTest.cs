@@ -20,7 +20,7 @@ namespace dark_place_game.tests
         [Fact]
         public void CurrencyHolderCreatedWithInitialCurrentAmountOf10ShouldContain10Currency()
         {
-            var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, 10);
+           var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE,EXEMPLE_CAPACITE_VALIDE , 10);
             var result = ch.CurrentAmount == 10;
             Assert.True(result);
         }
@@ -28,7 +28,7 @@ namespace dark_place_game.tests
         [Fact]
         public void CurrencyHolderCreatedWithInitialCurrentAmountOf25ShouldContain25Currency()
         {
-            var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, 25);
+           var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, 25);
             var result = ch.CurrentAmount == 25;
             Assert.True(result);
         }
@@ -36,7 +36,7 @@ namespace dark_place_game.tests
         [Fact]
         public void CurrencyHolderCreatedWithInitialCurrentAmountOf0ShouldContain0Currency()
         {
-            var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, 0);
+            var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE,EXEMPLE_CAPACITE_VALIDE, 0);
             var result = ch.CurrentAmount == 0;
             Assert.True(result);
         }
@@ -73,18 +73,15 @@ namespace dark_place_game.tests
         {
             // A vous d'écrire un test qui vérife qu'on peut créer un CurrencyHolder contenant une monnaie dont le nom est Brouzouf
             var ch = new CurrencyHolder("Brouzouf", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
-            var result = ch.CurrencyName == "Brouzouf";
-            Assert.True(result);
-
+            Assert.True( ch.CurrencyName == "Brouzouf");
         }
-
+  
         [Fact]
         public void DollardIsAValidCurrencyName()
         {
             // A vous d'écrire un test qui vérife qu'on peut créer un CurrencyHolder contenant une monnaie dont le nom est Dollard
             var ch = new CurrencyHolder("Dollard", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
-            var result = ch.CurrencyName == "Dollard";
-            Assert.True(result);
+            Assert.True(ch.CurrencyName == "Dollard");
 
         }
 
@@ -93,9 +90,8 @@ namespace dark_place_game.tests
         {
             // A vous d'écrire un test qui vérifie que si on ajoute via la methode put 10 currency à un sac a moité plein, il contient maintenant la bonne quantité de currency
             var currency = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
-            currency.Store(10);
-            var result = (currency.CurrentAmount == EXEMPLE_CONTENANCE_INITIALE_VALIDE + 10);
-            Assert.True(result);
+            currency.Put(10);
+            Assert.True(currency.CurrentAmount == EXEMPLE_CONTENANCE_INITIALE_VALIDE + 10);
         }
 
         [Fact]
@@ -115,8 +111,7 @@ namespace dark_place_game.tests
         {
             // A vous d'écrire un test qui doit échouer s'il es possible de créer un CurrencyHolder dont Le Nom De monnaie est inférieur a 4 lettres
             var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
-            var result = ch.CurrencyName.Length >= 4;
-            Assert.True(result);
+            Assert.True(ch.CurrencyName.Length >= 4);
         }
 
         [Fact]
@@ -132,7 +127,7 @@ namespace dark_place_game.tests
             Assert.Throws<CanWitchDrawMoreThanCurrentAmountException>(mauvaisAppel);
         }
         [Fact]
-        public void CreatingCurrency4or10NameThrowExeption()
+        public void VerifCurrency4or10()
         {
             // Un nom de currency doit faire entre 4 et 10 characteres
             var ch = new CurrencyHolder("currency", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
@@ -147,7 +142,7 @@ namespace dark_place_game.tests
         }
 
         [Fact]
-        public void CurrencyNameOver10CaracteresThrowExeption()
+        public void CurrencyNameOver10Caracteres()
         {
             //Ecrivez un test pour un nom de douze caracteres
             Action mauvaisAppel = () => new CurrencyHolder("abcdefghijkl", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
@@ -199,7 +194,7 @@ namespace dark_place_game.tests
         public void CurrencyNoBegina()
         {
             // Un nom de currency ne doit pas commencer par la lettre a minuscule 
-            Action mauvaisAppel = () => new CurrencyHolder("a", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
+            Action mauvaisAppel = () => new CurrencyHolder("aaaaa", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
             Assert.Throws<ArgumentException>(mauvaisAppel);
         }
 
@@ -207,7 +202,7 @@ namespace dark_place_game.tests
         public void CurrencyNoBeginA()
         {
             // Un nom de currency ne doit pas commencer par la lettre A majuscule 
-            Action mauvaisAppel = () => new CurrencyHolder("A", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
+            Action mauvaisAppel = () => new CurrencyHolder("AAAAA", EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
             Assert.Throws<ArgumentException>(mauvaisAppel);
         }
         [Fact]
@@ -230,32 +225,28 @@ namespace dark_place_game.tests
         {
             //Faire 2 tests unitaires pertinents pour la methode IsEmpty 
             var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
-            var result = ch.IsEmpty(0);
-            Assert.True(result);
+            Assert.True(ch.IsEmpty(0));
         }
         [Fact]
         public void IsEmpty2()
         {
             //Faire 2 tests unitaires pertinents pour la methode IsEmpty 
             var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, EXEMPLE_CAPACITE_VALIDE, EXEMPLE_CONTENANCE_INITIALE_VALIDE);
-            var result = ch.IsEmpty(10);
-            Assert.False(result);
+            Assert.False(ch.IsEmpty(10));
         }
         [Fact]
          public void IsFull1()
         {
             //Un CurrencyHolder est plein (IsFull) si son contenu est égal à sa capacité  
             var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, 100, 100);
-            var result = ch.IsFull();
-            Assert.True(result);
+            Assert.True(ch.IsFull());
         }
         [Fact]
          public void IsFull2()
         {
             //Un CurrencyHolder est plein (IsFull) si son contenu est égal à sa capacité 
             var ch = new CurrencyHolder(EXEMPLE_NOM_MONNAIE_VALIDE, 200, 100);
-            var result = ch.IsFull();
-            Assert.False(result);
+            Assert.False(ch.IsFull());
         }
     }
 }

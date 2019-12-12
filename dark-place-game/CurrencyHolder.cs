@@ -55,7 +55,7 @@ namespace dark_place_game
             {
                 throw new System.ArgumentException("Argument invalide");
             }
-            if (Equals(name, "") || (Equals(name,null)) || name.Length < 4 || name.Length > 10 || name[0] == 'a' || name[0] == 'A')
+            if (Equals(name, "") || (Equals(name,null)) || name.Length < 4 || name.Length > 10 || Equals(name[0],'a') || Equals(name[0],'A'))
             {
                 throw new System.ArgumentException("Argument invalide");
             }
@@ -63,8 +63,6 @@ namespace dark_place_game
             {
                 throw new System.ArgumentException("Argument invalide");
             }
-
-
 
             Capacity = capacity;
             CurrencyName = name;
@@ -103,7 +101,14 @@ namespace dark_place_game
 
         public void Store(int amount)
         {
-            if (currentAmount + amount <= capacity && amount != 0)
+           if (currentAmount + amount <= capacity && amount != 0)
+                currentAmount += amount;
+            else
+                throw new NotEnoughtSpaceInCurrencyHolderExeption();
+        }
+              public void Put(int amount)
+        {
+            if (currentAmount + amount <= capacity)
                 currentAmount += amount;
             else
                 throw new NotEnoughtSpaceInCurrencyHolderExeption();
